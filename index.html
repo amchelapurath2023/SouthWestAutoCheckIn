@@ -3,26 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Southwest Flight Check-in</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
+    <title>Southwest Check-In</title>
 </head>
 <body>
-    <h1>Southwest Flight Check-in</h1>
-    <form id="checkInForm">
-        <div>
+    <div class="container">
+        <div class="header">
+            <img src="./assets/southwest_airlines_logo.jpg" alt="Southwest Airlines Logo">
+            <h1>Online Check-In</h1>
+        </div>
+        <div class="check-in-form">
             <label for="confirmationNumber">Confirmation Number:</label>
             <input type="text" id="confirmationNumber" name="confirmationNumber" required>
-        </div>
-        <div>
+
             <label for="firstName">First Name:</label>
             <input type="text" id="firstName" name="firstName" required>
-        </div>
-        <div>
+
             <label for="lastName">Last Name:</label>
             <input type="text" id="lastName" name="lastName" required>
+
+            <button type="submit">Check-In</button>
         </div>
-        <button type="submit">Check-in</button>
-    </form>
+    </div>
 </body>
 </html>
-

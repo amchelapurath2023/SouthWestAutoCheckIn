@@ -1,38 +1,85 @@
 body {
-    font-family: Arial, sans-serif;
-    text-align: center;
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
 }
 
-form {
-    max-width: 300px;
-    margin: 0 auto;
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    background-color: #fff;
     padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 
-label, input {
-    display: block;
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.header img {
+    width: 400px;
+    height: 400px;
     margin-bottom: 10px;
 }
 
+.header h1 {
+    color: #ff4500; /* Southwest Airlines orange */
+}
+
+.check-in-form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 8px;
+    color: #333;
+}
+
 input {
-    width: 100%;
-    padding: 8px;
-    box-sizing: border-box;
+    padding: 12px;
+    margin-bottom: 16px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    transition: border-color 0.3s;
+}
+
+input:focus {
+    border-color: #ff4500;
 }
 
 button {
-    padding: 10px 20px;
-    background-color: #007bff;
+    padding: 14px;
+    background-color: #ff4500;
     color: #fff;
     border: none;
-    border-radius: 5px;
+    border-radius: 6px;
     cursor: pointer;
-    font-size: 16px;
+    transition: background-color 0.3s;
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #cc3700; /* Darker shade of Southwest orange */
+}
+
+@media screen and (max-width: 600px) {
+    .container {
+        padding: 15px;
+    }
+
+    .header img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .header h1 {
+        font-size: 1.5em;
+    }
+
+    input, button {
+        padding: 10px;
+    }
 }
