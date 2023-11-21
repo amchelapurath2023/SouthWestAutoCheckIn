@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="static/css/styles.css">
     <title>Southwest Check-In</title>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <img src="./assets/southwest_airlines_logo.jpg" alt="Southwest Airlines Logo">
+            <img src="static/css/southwest_airlines_logo.jpg" alt="Southwest Airlines Logo">
             <h1>Online Check-In</h1>
         </div>
         <div class="check-in-form">
@@ -22,6 +22,10 @@
             <label for="lastName">Last Name:</label>
             <input type="text" id="lastName" name="lastName" required>
 
+            <label for="compliance">You have read and are in compliance with TSA's and Southwest's travel safety regulations</label>
+            <input type="checkbox" id="compliance" name="compliance" value="compliance" required>
+          
+            
             <button type="submit">Check-In</button>
         </div>
     </div>
