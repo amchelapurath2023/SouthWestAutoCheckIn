@@ -26,22 +26,23 @@ body {
 }
 
 .header h1 {
-    color: #00a2ff; /* Southwest Airlines orange */
+    color: #00a2ff; 
 }
 
 .check-in-form {
-    display: flex;
     flex-direction: column;
 }
 
 label {
-    margin-bottom: 8px;
+    display: block;
+    margin: 12px;
     color: #333;
 }
 
 input {
+    display: block;
+    width: calc(100% - 24px); 
     padding: 12px;
-    margin-bottom: 16px;
     border: 1px solid #ddd;
     border-radius: 6px;
     transition: border-color 0.3s;
@@ -52,6 +53,8 @@ input:focus {
 }
 
 button {
+    display: block;
+    margin: 16px auto; /* Center the button horizontally with top and bottom margin */
     padding: 14px;
     background-color: #ff4500;
     color: #fff;
@@ -59,16 +62,13 @@ button {
     border-radius: 6px;
     cursor: pointer;
     transition: background-color 0.3s;
+    width: 50%;
 }
 
 button:hover {
-    background-color: #cc3700; /* Darker shade of Southwest orange */
+    background-color: #cc3700; 
 }
 
-radio {
-
-    
-}
 
 @media screen and (max-width: 600px) {
     .container {

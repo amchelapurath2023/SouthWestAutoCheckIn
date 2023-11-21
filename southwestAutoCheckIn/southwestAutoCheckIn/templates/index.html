@@ -13,20 +13,37 @@
             <h1>Online Check-In</h1>
         </div>
         <div class="check-in-form">
-            <label for="confirmationNumber">Confirmation Number:</label>
-            <input type="text" id="confirmationNumber" name="confirmationNumber" required>
+            <form method="post" action="check_in/" id="data">
+                {% csrf_token %}
+                <div>             
+                    <label for="confirmationNumber">Confirmation Number:</label>
+                    <input type="text" id="confirmationNumber" name="confirmationNumber" form="data" required>
+                </div>
 
-            <label for="firstName">First Name:</label>
-            <input type="text" id="firstName" name="firstName" required>
+                <div>
+                    <label for="firstName">First Name:</label>
+                    <input type="text" id="firstName" name="firstName" form="data" required>
+                </div>
 
-            <label for="lastName">Last Name:</label>
-            <input type="text" id="lastName" name="lastName" required>
+                <div>
+                    <label for="lastName">Last Name:</label>
+                    <input type="text" id="lastName" name="lastName" form="data" required>
+                </div>
 
-            <label for="compliance">You have read and are in compliance with TSA's and Southwest's travel safety regulations</label>
-            <input type="checkbox" id="compliance" name="compliance" value="compliance" required>
-          
-            
-            <button type="submit">Check-In</button>
+                <div>
+                    <label for="flight_time">Departure time:</label>
+                    <input type="datetime-local" id="flight_time" name="flight_time" min="2000-01-01T00:00" max="2030-01-01T00:00" form="data" />
+                </div>
+
+                <div>
+                    <label for="compliance">You have read and are in compliance with TSA's and Southwest's travel safety regulations</label>
+                    <input type="checkbox" id="compliance" name="compliance" value="compliance" form="data" required>
+                </div>
+                
+                <div>
+                    <button type="submit">Check-In</button>
+                </div>
+            </form>
         </div>
     </div>
 </body>
