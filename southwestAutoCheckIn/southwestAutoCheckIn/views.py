@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import Http404, HttpResponse
-
+from .models import FlightReservation
 
 
 def index(request):
@@ -14,6 +14,14 @@ def checkIn(request):
     flight_time = request.POST.get("flight_time")
     compliance = request.POST.get("compliance")
     
+    reservation = FlightReservation(
+        confirmation_code=confirmation_number,
+        first_name=first_name,
+        last_name=last_name,
+        flight_time=flight_time,
+    )
+
+    reservation.save()
 
     context = {
         'confirmation_number': confirmation_number,

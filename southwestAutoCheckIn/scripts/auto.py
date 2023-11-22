@@ -58,10 +58,10 @@ class SouthwestCheckIn:
 
 if __name__ == '__main__':
     checker = SouthwestCheckIn(
-        '4H8U46',  # confirmation number
-        'Anshul',  # first name
-        'Chelapurath',  # last name
-        '4439035656')  # phone number
+        '',  # confirmation number
+        '',  # first name
+        '',  # last name
+        '')  # phone number
     checker.check_in()
     
     checker.send_pass()
