@@ -16,13 +16,20 @@ def check_flight_reservations():
             cursor = conn.cursor()
 
             # Replace this query with your actual query
-            query = "SELECT firstname, lastname, confirmation_code, flight_time, phonenumber FROM southwestAutoCheckIn_flightreservation WHERE flight_time <= NOW() + INTERVAL '24 hours';"
-            cursor.execute(query)
+            select_query = "SELECT id, firstname, lastname, confirmation_code, flight_time, phonenumber FROM southwestAutoCheckIn_flightreservation WHERE flight_time <= NOW() + INTERVAL '24 hours';"
+            cursor.execute(select_query)
             records = cursor.fetchall()
 
             for record in records:
-                firstname, lastname, confirmation_code, phonenumber = record
+                record_id, firstname, lastname, confirmation_code, phonenumber = record
                 subprocess.run(['python3', 'auto.py', firstname, lastname, confirmation_code, phonenumber])
+
+                # Delete the processed record from the table
+                delete_query = f"DELETE FROM southwestAutoCheckIn_flightreservation WHERE id = {record_id};"
+                cursor.execute(delete_query)
+
+            # Commit the changes to the database
+            conn.commit()
 
         except Exception as e:
             print(f"Error: {e}")
