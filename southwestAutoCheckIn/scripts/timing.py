@@ -14,13 +14,12 @@ def check_flight_reservations():
         try:
             conn = psycopg2.connect(**db_params)
             cursor = conn.cursor()
-            print("connected")
 
             # Replace this query with your actual query
             select_query = 'SELECT id, first_name, last_name, confirmation_code, flight_time, phone_number FROM "southwestAutoCheckIn_flightreservation" WHERE flight_time <= NOW() + INTERVAL \'24 hours\';'
             cursor.execute(select_query)
             records = cursor.fetchall()
-            print(records)
+
 
             for record in records:
                 record_id, first_name, last_name, confirmation_code, flight_time, phone_number = record
