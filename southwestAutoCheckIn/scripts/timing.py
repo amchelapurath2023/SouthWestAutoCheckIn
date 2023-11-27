@@ -24,7 +24,7 @@ def check_flight_reservations():
 
             for record in records:
                 record_id, first_name, last_name, confirmation_code, flight_time, phone_number = record
-                subprocess.run(['python3', '/Users/anshul/projects/southwestAutoCheckIn/scripts/auto.py', first_name, last_name, confirmation_code, phone_number])
+                subprocess.run(['python3', '/Users/anshul/projects/southwestAutoCheckIn/scripts/auto.py', confirmation_code, first_name, last_name, phone_number])
 
                 # Delete the processed record from the table
                 # Delete the processed record from the table
