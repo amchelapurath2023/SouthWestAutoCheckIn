@@ -14,32 +14,30 @@ def check_flight_reservations():
         try:
             conn = psycopg2.connect(**db_params)
             cursor = conn.cursor()
+            print("connected")
 
             # Replace this query with your actual query
-            select_query = "SELECT id, firstname, lastname, confirmation_code, flight_time, phonenumber FROM southwestAutoCheckIn_flightreservation WHERE flight_time <= NOW() + INTERVAL '24 hours';"
+            select_query = 'SELECT id, first_name, last_name, confirmation_code, flight_time, phone_number FROM "southwestAutoCheckIn_flightreservation" WHERE flight_time <= NOW() + INTERVAL \'24 hours\';'
             cursor.execute(select_query)
             records = cursor.fetchall()
+            print(records)
 
             for record in records:
-                record_id, firstname, lastname, confirmation_code, phonenumber = record
-                subprocess.run(['python3', 'auto.py', firstname, lastname, confirmation_code, phonenumber])
+                record_id, first_name, last_name, confirmation_code, flight_time, phone_number = record
+                subprocess.run(['python3', '/Users/anshul/projects/southwestAutoCheckIn/scripts/auto.py', first_name, last_name, confirmation_code, phone_number])
 
                 # Delete the processed record from the table
-                delete_query = f"DELETE FROM southwestAutoCheckIn_flightreservation WHERE id = {record_id};"
+                # Delete the processed record from the table
+                delete_query = f'DELETE FROM "southwestAutoCheckIn_flightreservation" WHERE id = {record_id};'
                 cursor.execute(delete_query)
+
+
 
             # Commit the changes to the database
             conn.commit()
 
         except Exception as e:
             print(f"Error: {e}")
-
-        finally:
-            if conn:
-                conn.close()
-
-        # Sleep for an interval before checking again (e.g., every 5 minutes)
-        sleep(300)
 
 if __name__ == "__main__":
     check_flight_reservations()
