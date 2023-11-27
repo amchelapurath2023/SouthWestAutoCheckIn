@@ -10,7 +10,7 @@
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-            text-align: center; /* Center text within container */
+            text-align: center; 
         }
         .header h1 {
             color: #00a2ff;
@@ -20,10 +20,11 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1> Your reservation has been saved and we will automatically check you</h1>
+            <h1> Your reservation has been saved and we will automatically check you in for your flight</h1>
             <h1> If you need to check in bags, please visit southwest.com</h1>
-            <h1> If you did not receive a text with your boarding pass 24 hours before departure, you may have entered your reservation incorrectly and will have to manually check in</h1>
-            <h1>Enjoy your flight {{ first_name }} {{ last_name }}</h1>
+            <h1> If you do not receive a text with your boarding pass 24 hours before departure, 
+                 you may have entered your reservation incorrectly and will have to manually check in</h1>
+            <h1>Enjoy your flight {{ first_name }}</h1>
         </div>
     </div>
 </body>
